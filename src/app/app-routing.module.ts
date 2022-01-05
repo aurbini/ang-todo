@@ -1,18 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TodosListComponent } from './todos/todos-list/todos-list.component';
-import { HomeComponent } from './home/home.component';
+export { TodosComponent } from './todos/components/todos/todos.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'active',
-  },
-  {
-    path: 'active',
-    component: TodosListComponent,
-  },
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

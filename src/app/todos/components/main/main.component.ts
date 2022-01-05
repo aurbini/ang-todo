@@ -12,7 +12,13 @@ import { map } from 'rxjs';
 export class MainComponent implements OnInit {
   visibleTodos$: Observable<TodoInterface[]>;
   noTodoClass$: Observable<boolean>;
+  isAllTodoSelected$: Observable<boolean>;
+  editingId: string | null = null;
+
   constructor(private todoService: TodosService) {
+    this.isAllTodoSelected$ = this.todoService.todos$.pipe(
+      map((todos) => todos.every((todo) => todo.isCompleted))
+    );
     this.noTodoClass$ = this.todoService.todos$.pipe(
       map((todos) => todos.length === 0)
     );
@@ -33,5 +39,14 @@ export class MainComponent implements OnInit {
     );
   }
 
+  toggleAllTodos(event: Event): void {
+    const target = event.target as HTMLInputElement;
+
+    this.todoService.toogleAll(target.checked);
+  }
+
+  setEditingId(editingId: string | null): void {
+    this.editingId = editingId;
+  }
   ngOnInit() {}
 }

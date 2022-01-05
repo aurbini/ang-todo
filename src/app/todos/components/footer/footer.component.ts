@@ -33,4 +33,9 @@ export class FooterComponent {
 
     this.todoService.changeFilter(filterName);
   }
+  dblClick(event: Event): void {
+    console.log('dblClick');
+    event.preventDefault();
+    console.log('dblClick');
+  }
 }
