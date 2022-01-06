@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-8 mx-auto text-center my-5">
+    <h1 style="font-size: 60px" class="hs-1 fw-bold text-success">Todos</h1>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Insert Your Todo"
+        aria-label="Recipient's username"
+        aria-describedby="button-addon2"
+        (keyup)="onChange($event)"
+        (keyup.enter)="addTodo()"
+      />
+    </div>
+  </div>
+</div>
