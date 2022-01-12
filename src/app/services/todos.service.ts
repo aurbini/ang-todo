@@ -5,7 +5,9 @@ import { TodoInterface } from '../types/todo.interface';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
-  todos$ = new BehaviorSubject<TodoInterface[]>([]);
+  todos$: BehaviorSubject<TodoInterface[]> = new BehaviorSubject<
+    TodoInterface[]
+  >([]);
 
   constructor() {}
 
