@@ -1,4 +1,12 @@
-<div class="container-fluid vh-100 bg-light p-5">
+<div class="container-fluid vh-100 bg-light p-5 position-relative">
   <app-header></app-header>
-  <app-main></app-main>
+  <app-main
+    class="position-relative"
+    style="z-index: 2; border-top: 1px solid #e6e6e6"
+  >
+  </app-main>
+  <app-footer
+    class="position-relative"
+    style="bottom: 30px; overflow: hidden; height: 50px"
+  ></app-footer>
 </div>
