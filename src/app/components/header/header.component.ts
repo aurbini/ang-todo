@@ -19,11 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   addTodo() {
-    const newTodo: TodoInterface = {
-      id: Math.random().toString().slice(2),
-      text: this.text,
-      isCompleted: false,
-    };
-    this.todosService.addTodo(newTodo);
+    this.todosService.addTodo(this.text);
+    this.text = '';
   }
 }

@@ -1,0 +1,8 @@
+.active {
+  color: white;
+  background-color: rgb(74, 74, 237);
+  font-weight: bold;
+}
+.active a {
+  color: white;
+}

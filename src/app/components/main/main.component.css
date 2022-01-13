@@ -1,0 +1,11 @@
+.complete-marker {
+  color: black;
+}
+
+.incomplete-marker {
+  color: grey;
+  background-color: blue;
+}
+.hidden {
+  display: none;
+}

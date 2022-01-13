@@ -1,20 +1,49 @@
 <div class="row">
-  <div class="col col-sm-8 mx-auto">
-    <div class="row">
-      <div class="col-sm-12 bg-white">
-        <div class="row">
-          <div class="col-3">
-            <span class="mt-3">total = "3"</span>
-          </div>
-          <div class="col-8">
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item active">Active</li>
-              <li class="list-group-item">Complete</li>
-              <li class="list-group-item">All</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="col-3">
+    <span class="mt-3">{{ activeCount | async }} {{ label | async }}</span>
+  </div>
+  <div class="col-8">
+    <ul class="list-group list-group-horizontal">
+      <li
+        class="list-group-item"
+        [ngClass]="{
+          active: (filter$ | async) === filterEnum.active
+        }"
+      >
+        <a
+          (click)="changeFilter($event, filterEnum.active)"
+          href="/"
+          class="text-decoration-none"
+        >
+          Active
+        </a>
+      </li>
+      <li
+        class="list-group-item"
+        [ngClass]="{
+          active: (filter$ | async) === filterEnum.completed
+        }"
+      >
+        <a
+          (click)="changeFilter($event, filterEnum.completed)"
+          href="/"
+          class="text-decoration-none"
+        >
+          Complete
+        </a>
+      </li>
+      <li
+        class="list-group-item"
+        [ngClass]="{ active: (filter$ | async) === filterEnum.all }"
+      >
+        <a
+          (click)="changeFilter($event, filterEnum.all)"
+          href="/"
+          class="text-decoration-none"
+        >
+          All
+        </a>
+      </li>
+    </ul>
   </div>
 </div>

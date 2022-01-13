@@ -1,0 +1,17 @@
+.delete-icon {
+  display: none;
+  color: red;
+}
+
+#container:hover .delete-icon {
+  display: inline-block;
+}
+
+.strikeThrough {
+  text-decoration: line-through;
+}
+
+.hidden {
+  background-color: blue;
+  display: none;
+}
